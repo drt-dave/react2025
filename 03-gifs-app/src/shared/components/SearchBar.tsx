@@ -1,4 +1,5 @@
-import { KeyboardEvent, useEffect, useState } from "react";
+import { useEffect, useState, type KeyboardEvent } from "react";
+
 interface Props {
     placeholder: string;
     buttonTitle: string;
@@ -23,7 +24,7 @@ export const SearchBar = ({ placeholder = 'Buscar', buttonTitle, onQuery }: Prop
     };
 
 
-    const handleKeyDown = (event: KeyboardEvent<HTMLElement>) => {
+    const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Enter') {
             handleSearch();
         }
